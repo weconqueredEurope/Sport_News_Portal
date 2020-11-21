@@ -1,0 +1,103 @@
+html{
+    font-size:62.5%
+}
+@font-face{
+    font-family:bmwebfont;
+    font-style:normal;
+    font-weight:300;
+    font-display:auto;
+    src:url(https://baomoi-static.zadn.vn/web/styles/fonts/icon-font/bm-light.eot);
+    src:url(https://baomoi-static.zadn.vn/web/styles/fonts/icon-font/bm-light.eot?#iefix) format("embedded-opentype"),url(https://baomoi-static.zadn.vn/web/styles/fonts/icon-font/bm-light.woff2) format("woff2"),url(https://baomoi-static.zadn.vn/web/styles/fonts/icon-font/bm-light.woff) format("woff"),url(https://baomoi-static.zadn.vn/web/styles/fonts/icon-font/bm-light.ttf) format("truetype"),url(https://baomoi-static.zadn.vn/web/styles/fonts/icon-font/bm-light.svg#bmwebfont) format("svg")
+}
+.fal{
+    font-family:bmwebfont;
+    font-weight:300
+}
+@font-face{
+    font-family:bmwebfont;
+    font-style:normal;
+    font-weight:400;
+    font-display:auto;
+    src:url(https://baomoi-static.zadn.vn/web/styles/fonts/icon-font/bm-regular.eot);
+    src:url(https://baomoi-static.zadn.vn/web/styles/fonts/icon-font/bm-regular.eot?#iefix) format("embedded-opentype"),url(https://baomoi-static.zadn.vn/web/styles/fonts/icon-font/bm-regular.woff2) format("woff2"),url(https://baomoi-static.zadn.vn/web/styles/fonts/icon-font/bm-regular.woff) format("woff"),url(https://baomoi-static.zadn.vn/web/styles/fonts/icon-font/bm-regular.ttf) format("truetype"),url(https://baomoi-static.zadn.vn/web/styles/fonts/icon-font/bm-regular.svg#bmwebfont) format("svg")
+}
+.far{
+    font-family:bmwebfont;
+    font-weight:400
+}
+@font-face{
+    font-family:bmwebfont;
+    font-style:normal;
+    font-weight:900;
+    font-display:auto;
+    src:url(https://baomoi-static.zadn.vn/web/styles/fonts/icon-font/bm-solid.eot);
+    src:url(https://baomoi-static.zadn.vn/web/styles/fonts/icon-font/bm-solid.eot?#iefix) format("embedded-opentype"),url(https://baomoi-static.zadn.vn/web/styles/fonts/icon-font/bm-solid.woff2) format("woff2"),url(https://baomoi-static.zadn.vn/web/styles/fonts/icon-font/bm-solid.woff) format("woff"),url(https://baomoi-static.zadn.vn/web/styles/fonts/icon-font/bm-solid.ttf) format("truetype"),url(https://baomoi-static.zadn.vn/web/styles/fonts/icon-font/bm-solid.svg#bmwebfont) format("svg")
+}
+.fa,.fas{
+    font-family:bmwebfont;
+    font-weight:900
+}
+@font-face{
+    font-family:bmbrands;
+    font-style:normal;
+    font-weight:400;
+    font-display:auto;
+    src:url(https://baomoi-static.zadn.vn/web/styles/fonts/icon-font/bm-brands.eot);
+    src:url(https://baomoi-static.zadn.vn/web/styles/fonts/icon-font/bm-brands.eot?#iefix) format("embedded-opentype"),url(https://baomoi-static.zadn.vn/web/styles/fonts/icon-font/bm-brands.woff2) format("woff2"),url(https://baomoi-static.zadn.vn/web/styles/fonts/icon-font/bm-brands.woff) format("woff"),url(https://baomoi-static.zadn.vn/web/styles/fonts/icon-font/bm-brands.ttf) format("truetype"),url(https://baomoi-static.zadn.vn/web/styles/fonts/icon-font/bm-brands.svg#bmbrands) format("svg")
+}
+.fab{
+    font-family:bmbrands
+}
+:root{
+    --blue:#007bff;
+    --indigo:#6610f2;
+    --purple:#6f42c1;
+    --pink:#e83e8c;
+    --red:#dc3545;
+    --orange:#fd7e14;
+    --yellow:#ffc107;
+    --green:#28a745;
+    --teal:#20c997;
+    --cyan:#17a2b8;
+    --white:#fff;
+    --gray:#6c757d;
+    --gray-dark:#343a40;
+    --primary:#2FA1B3;
+    --secondary:#DB562B;
+    --third:#FFC810;
+    --success:#28a745;
+    --info:#17a2b8;
+    --warning:#ffc107;
+    --danger:#dc3545;
+    --light:#f8f9fa;
+    --dark:#343a40;
+    --breakpoint-xs:0;
+    --breakpoint-lg:992px;
+    --font-family-sans-serif:baomoi,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    --font-family-monospace:SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace
+}
+*,::after,::before{
+    box-sizing:border-box
+}
+html{
+    font-family:sans-serif;
+    line-height:1.15;
+    -webkit-text-size-adjust:100%;
+    -ms-text-size-adjust:100%;
+    -ms-overflow-style:scrollbar;
+    -webkit-tap-highlight-color:transparent
+}
+.figure, h1, h2, h3, h4, h5, h6, ol, p, ul{
+    margin: 0;
+}
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6{
+    margin-bottom: 0;
+    font-family: inherit;
+    font-weight: 400;
+    line-height: 1.3;
+    color: inherit;
+}
+img{
+    vertical-align: middle;
+    border-style: none;
+}

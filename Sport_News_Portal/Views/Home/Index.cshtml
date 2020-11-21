@@ -1,0 +1,240 @@
+﻿@model IEnumerable<ReadRSSFeedMVC.Models.Rss>
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div data-track="|hotnews">
+    <div class="rank1-stories">
+        <div class="story" data-track="|index0">
+            <div class="story__thumb">
+                <a href="news-details.html" target="_blank">
+                    <img src="\Content\assets\img\VNcovidnonew.jpg" alt="Đến 6h sáng nay Việt Nam không ghi nhận ca mắc mới COVID-19">
+                </a>
+            </div>
+            <h4 class="story__heading">
+                <a href="news-details.html" title="Đến 6h sáng nay Việt Nam không ghi nhận ca mắc mới COVID-19">
+                    Đến 6h sáng nay Việt Nam không ghi nhận ca mắc mới COVID-19
+                </a>
+            </h4>
+            <div class="story__meta">
+                <a href="news-details.html" class="source">ĐS & SK</a>
+                <time class="time friendly" datetime="2020-04-05T06:30:00.000+07:00">2 giờ</time>
+                <a href="news-details.html" class="relate">21210 liên quan</a>
+            </div>
+        </div>
+    </div>
+    <div class="rank2-stories">
+        <div class="story is-first" data-track="|index1">
+            <div class="story__thumb">
+                <a href="" target="_blank">
+                    <img src="\Content\assets\img\worldnews.jpg" alt="Cập nhật 7h ngày 5/4: Tổng thống Trump cảnh báo 'tuần cam go nhất' của nước Mỹ sắp đến, Italy ghi nhận số ca Covid-19 điều trị tích cực giảm">
+                </a>
+            </div>
+            <h4 class="story__heading">
+                <a href="" title="Cập nhật 7h ngày 5/4: Tổng thống Trump cảnh báo 'tuần cam go nhất' của nước Mỹ sắp đến, Italy ghi nhận số ca Covid-19 điều trị tích cực giảm">
+                    Cập nhật 7h ngày 5/4: Tổng thống Trump cảnh báo 'tuần cam go nhất' của nước Mỹ sắp đến, Italy ghi nhận số ca Covid-19 điều trị tích cực giảm
+                </a>
+            </h4>
+            <div class="story__meta">
+                <a href="" class="source">TG&VN</a>
+                <time class="time friendly" datetime="2020-04-05T06:30:00.000+07:00">1 giờ</time>
+            </div>
+        </div>
+        <div class="story" data-track="|index2">
+            <div class="story__thumb">
+                <a href="" target="_blank">
+                    <img src="\Content\assets\img\VNYte.jpg" alt="Người nước ngoài: Cảm ơn nhé, ngành y tế Việt Nam!">
+                </a>
+            </div>
+            <h4 class="story__heading">
+                <a href="" title="Người nước ngoài: Cảm ơn nhé, ngành y tế Việt Nam!">
+                    Người nước ngoài: Cảm ơn nhé, ngành y tế Việt Nam!
+                </a>
+            </h4>
+            <div class="story__meta">
+                <a href="" class="source">TG&VN</a>
+                <time class="time friendly" datetime="2020-04-05T06:30:00.000+07:00">3 giờ</time>
+            </div>
+        </div>
+        <div class="story" data-track="|index3">
+            <div class="story__thumb">
+                <a href="" target="_blank">
+                    <img src="\Content\assets\img\diseaseVN.jpg" alt="Những người vượt nắng ngăn dịch ở đại ngàn">
+                </a>
+            </div>
+            <h4 class="story__heading">
+                <a href="" title="Những người vượt nắng ngăn dịch ở đại ngàn">
+                    Những người vượt nắng ngăn dịch ở đại ngàn
+                </a>
+            </h4>
+            <div class="story__meta">
+                <a href="" class="source">Nhân dân</a>
+                <time class="time friendly" datetime="2020-04-05T06:30:00.000+07:00">3 giờ</time>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="timeline loadmore" data-track="|timeline">
+    @foreach (var item in Model)
+    {
+        <div class="story" data-track="|index0">
+            <div class="story__thumb">
+                <a href="@item.Link" target="_blank">
+                    <img src="@Html.Raw(item.Description)" alt="@Html.Raw(item.Title)">
+                </a>
+            </div>
+            <h4 class="story__heading">
+                <a href="@item.Link" title="@Html.Raw(item.Title)" target="_blank">@Html.Raw(item.Title)</a>
+            </h4>
+            <div class="story__meta">
+                <a class="source" href="">@item.Category</a>
+                <time class="time friendly" datetime="">@Html.Raw(item.PubDate)</time>
+                <a class="relate" href="">1143 liên quan</a>
+            </div>
+        </div>
+    }
+</div>
+
+@section NewestBox{
+    <div class="small-list newest-box" data-track="|newest_box">
+        <div class="story is-first no-visited-mark" data-track="tbt">
+            <div class="story__thumb">
+                <a href="" target="_blank">
+                    <img src="\Content\assets\img\TBT.png" alt="Tổng Bí thư, Chủ tịch nước Nguyễn Phú Trọng">
+                </a>
+            </div>
+            <h4 class="story__heading">
+                <a href="" title="Tổng Bí thư, Chủ tịch nước Nguyễn Phú Trọng">Tổng Bí thư, Chủ tịch nước Nguyễn Phú Trọng</a>
+            </h4>
+        </div>
+        <div class="story" data-track="index0">
+            <div class="story__thumb">
+                <a href="" target="_blank">
+                    <img src="\Content\assets\img\TT.jpg" alt="Thủ tướng: 'Không để dịch bùng phát nặng nề ở Việt Nam'">
+                </a>
+            </div>
+            <h4 class="story__heading">
+                <a href="" title="Thủ tướng: 'Không để dịch bùng phát nặng nề ở Việt Nam'">Thủ tướng: 'Không để dịch bùng phát nặng nề ở Việt Nam'</a>
+            </h4>
+            <div class="story__meta">
+                <a href="" class="source">Zing</a>
+                <time class="time friendly" datetime="2020-04-01T21:43:00.000+07:00"></time>
+                <a href="" class="relate">70 liên quan</a>
+            </div>
+        </div>
+        <div class="story" data-track="index1">
+            <div class="story__thumb">
+                <a href="" target="_blank">
+                    <img src="\Content\assets\img\vacxin.jpg" alt="Những loại vắcxin phòng COVID-19 đang điều chế và thử nghiệm">
+                </a>
+            </div>
+            <h4 class="story__heading">
+                <a href="" title="Những loại vắcxin phòng COVID-19 đang điều chế và thử nghiệm">
+                    Những loại vắcxin phòng COVID-19 đang điều chế và thử nghiệm
+                </a>
+            </h4>
+            <div class="story__meta">
+                <a href="" class="source">VietnamPlus</a>
+                <time class="time friendly" datetime="2020-04-01T21:43:00.000+07:00"></time>
+                <a href="" class="relate">10 liên quan</a>
+            </div>
+        </div>
+        <div class="story" data-track="index2">
+            <div class="story__thumb">
+                <a href="" target="_blank">
+                    <img src="\Content\assets\img\UScovid.jpg" alt="'Tuần tới là đỉnh dịch COVID-19 tại một số thành phố lớn của Mỹ'">
+                </a>
+            </div>
+            <h4 class="story__heading">
+                <a href="" title="'Tuần tới là đỉnh dịch COVID-19 tại một số thành phố lớn của Mỹ'">
+                    'Tuần tới là đỉnh dịch COVID-19 tại một số thành phố lớn của Mỹ'
+                </a>
+            </h4>
+            <div class="story__meta">
+                <a href="" class="source">VietnamPlus</a>
+                <time class="time friendly" datetime="2020-04-01T21:43:00.000+07:00">16 phút</time>
+            </div>
+        </div>
+        <div class="story" data-track="index3">
+            <div class="story__thumb">
+                <a href="" target="_blank">
+                    <img src="\Content\assets\img\HNxuphat.jpg" alt="Hà Nội vắng lặng trong những ngày xử phạt người ra đường không vì mục đích thiết yếu">
+                </a>
+            </div>
+            <h4 class="story__heading">
+                <a href="" title="Hà Nội vắng lặng trong những ngày xử phạt người ra đường không vì mục đích thiết yếu">
+                    Hà Nội vắng lặng trong những ngày xử phạt người ra đường không vì mục đích thiết yếu
+                </a>
+            </h4>
+            <div class="story__meta">
+                <a href="" class="source">Tiền Phong</a>
+                <time class="time friendly" datetime="2020-04-01T21:43:00.000+07:00">17 phút</time>
+            </div>
+        </div>
+        <div class="story" data-track="index4">
+            <div class="story__thumb">
+                <a href="" target="_blank">
+                    <img src="\Content\assets\img\TBN.jpg" alt="Tây Ban Nha vượt Ý về số ca nhiễm Covid-19, châu Âu quyết liệt hơn">
+                </a>
+            </div>
+            <h4 class="story__heading">
+                <a href="" title="Tây Ban Nha vượt Ý về số ca nhiễm Covid-19, châu Âu quyết liệt hơn">
+                    Tây Ban Nha vượt Ý về số ca nhiễm Covid-19, châu Âu quyết liệt hơn
+                </a>
+            </h4>
+            <div class="story__meta">
+                <a href="" class="source">Người Lao Động</a>
+                <time class="time friendly" datetime="2020-04-01T21:43:00.000+07:00">18 phút</time>
+            </div>
+        </div>
+        <div class="story" data-track="index5">
+            <div class="story__thumb">
+                <a href="" target="_blank">
+                    <img src="\Content\assets\img\TQcovid.jpg" alt="Trung Quốc đại lục ghi nhận thêm 30 ca mắc COVID-19 và 3 ca tử vong">
+                </a>
+            </div>
+            <h4 class="story__heading">
+                <a href="" title="Trung Quốc đại lục ghi nhận thêm 30 ca mắc COVID-19 và 3 ca tử vong">
+                    Trung Quốc đại lục ghi nhận thêm 30 ca mắc COVID-19 và 3 ca tử vong
+                </a>
+            </h4>
+            <div class="story__meta">
+                <a href="" class="source">VOV</a>
+                <time class="time friendly" datetime="2020-04-01T21:43:00.000+07:00">26 phút</time>
+            </div>
+        </div>
+        <div class="story" data-track="index6">
+            <div class="story__thumb">
+                <a href="" target="_blank">
+                    <img src="\Content\assets\img\Bayern.jpg" alt="Bayern: Chúng tôi không 'Corona-Discount' khi gia hạn với cầu thủ">
+                </a>
+            </div>
+            <h4 class="story__heading">
+                <a href="" title="Bayern: Chúng tôi không 'Corona-Discount' khi gia hạn với cầu thủ">
+                    Bayern: Chúng tôi không 'Corona-Discount' khi gia hạn với cầu thủ
+                </a>
+            </h4>
+            <div class="story__meta">
+                <a href="" class="source">VietnamPlus</a>
+                <time class="time friendly" datetime="2020-04-01T21:43:00.000+07:00">30 phút</time>
+            </div>
+        </div>
+        <div class="story" data-track="index7">
+            <div class="story__thumb">
+                <a href="" target="_blank">
+                    <img src="\Content\assets\img\Indcovid.jpg" alt="Đội tuyển Indonesia có trợ lý huấn luyện viên nhiễm COVID-19">
+                </a>
+            </div>
+            <h4 class="story__heading">
+                <a href="" title="Đội tuyển Indonesia có trợ lý huấn luyện viên nhiễm COVID-19">
+                    Đội tuyển Indonesia có trợ lý huấn luyện viên nhiễm COVID-19
+                </a>
+            </h4>
+            <div class="story__meta">
+                <a href="" class="source">VietnamNet</a>
+                <time class="time friendly" datetime="2020-04-01T21:43:00.000+07:00">33 phút</time>
+            </div>
+        </div>
+    </div>
+}

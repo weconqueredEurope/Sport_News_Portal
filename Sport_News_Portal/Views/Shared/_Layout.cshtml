@@ -1,0 +1,686 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        Trang chủ -
+        Tin tức nóng nhất, tin tức mới nhất cập nhật liên tục 24H
+    </title>
+    <link rel="stylesheet" href="\Content\assets\css\base.css">
+    <link rel="stylesheet" href="\Content\assets\css\main.css">
+    <link rel="stylesheet" href="\Content\assets\fonts\fontawesome-free-5.12.1\css\all.min.css">
+    <link rel="shortcut icon" href="\Content\assets\img\Global-News-01.png">
+</head>
+
+<body>
+    <div class="wrap homepage_page">
+        <div class="header">
+            <div class="container">
+                <a href="index.html" class="link-homepage">
+                    <img class="logo" src="\Content\assets\img\Logo.jpg" alt="">
+                </a>
+                <div class="header__search bm-search">
+                    <input type="text" class="text-search" placeholder="Nhập nội dung tìm kiếm">
+                    <button class="search-button">
+                        <i class="search-button--icon fal fa-search"></i>
+                    </button>
+                </div>
+                <div class="header__user">
+                    <div class="register">
+                        <a href="register.html" class="register-link">
+                            <i class="register-link--icon fal fa-registered"></i>
+                        </a>
+                    </div>
+                    <div class="login">
+                        <a href="login.html" class="login-link">
+                            <i class="login-link--icon fal fa-user"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="header__setting">
+                    <a href="" class="header__setting-noti">
+                        <i class="header__setting-noti--icon fal fa-bell"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="nav-wrap">
+            <div class="nav">
+                <div class="nav-container">
+                    <ul class="nav-container--list">
+                        <li class="nav-container--list icon" style="padding-left: 0;">
+                            <i class="fas fa-home"></i>
+                        </li>
+                        <li class="nav-container--list ">
+                            <a href="" class="">THỂ THAO VIỆT NAM</a>
+                        </li>
+                        <li class="nav-container--list ">
+                            <a href="PL.html" class="">CÚP CHAMPIONS LEAGUE</a>
+                        </li>
+                        <li class="nav-container--list ">
+                            <a href="" class="">BÓNG ĐÁ QUỐC TẾ</a>
+                            <ul class=" sub-menu">
+                                <li class="International">
+                                    <a href="" class="sub-menu ">BÓNG ĐÁ ANH</a>
+                                </li>
+                                <li class="">
+                                    <a href="" class="sub-menu ">BÓNG ĐÁ ĐỨC</a>
+                                </li>
+                                <li class="">
+                                    <a href="" class="sub-menu ">BÓNG ĐÁ TÂY BAN NHA</a>
+                                </li>
+                                <li class="">
+                                    <a href="" class="sub-menu ">BÓNG ĐÁ Ý</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-container--list ">
+                            <a href="GT.html" class="">QUẦN VỢT</a>
+                        </li>
+                        <li class="nav-container--list">
+                            <a href="CN.html" class="">ĐUA XE</a>
+                        </li>
+                        <li class="nav-container--list ">
+                            <a href="KH.html" class="">CẦU LÔNG</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="main-content">
+            <div class="l-grid">
+                <div class="main-filter">
+                    <a href="" class="popular is-active">
+                        <i class="spr spr--pin-hot"></i>
+                        <i class="fab fa-hotjar"></i>
+                        <span>Nóng</span>
+                    </a>
+                    <a href="" class="latest">
+                        <i class="spr spr--pin-latest"></i>
+                        <i class="fal fa-clock"></i>
+                        <span>Mới</span>
+                        <span class="number">15</span>
+                    </a>
+                    <a href="" class="video">
+                        <i class="spr spr--pin-video"></i>
+                        <i class="fal fa-video"></i>
+                        <span>Video</span>
+                    </a>
+                    <a href="" class="topiclist">
+                        <i class="spr spr--pin-event"></i>
+                        <i class="fal fa-calendar-alt"></i>
+                        <span>Chủ đề</span>
+                    </a>
+                    <a href="" class="is-last recommend login-required">
+                        <i class="spr spr--pin-recommend"></i>
+                        <i class="fal fa-ribbon"></i>
+                        <br><span>Đề xuất</span>
+                    </a>
+                </div>
+                <div class="l-grid__main">
+                    @RenderBody()
+                </div>
+                <div class="l-grid__sub">
+                    <div class="sidebar">
+                        @RenderSection("NewestBox", required: false)
+                        <div class="fyi--300x250">
+                            <div class="story no-visited-mark" data-track="|cthcm">
+                                <a href="https://moha.gov.vn/hochiminh.html">
+                                    <img src="\Content\assets\img\banner_hcm_02-min.png" width="300" height="250" alt="Học tập và làm theo tấm gương đạo đức Hồ Chí Minh">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="rightBox-1" data-track="|video_box">
+                            <h2 class="block__header">
+                                <a href="Video.html">
+                                    <span>Video</span>
+                                </a>
+                            </h2>
+                            <div class="rightBox-1__content">
+                                <div class="story story--video story--photo" data-track="|index0">
+                                    <div class="story__thumb">
+                                        <a href="">
+                                            <img src="\Content\assets\img\Spetsnaz.jpg" alt="Chiêm ngưỡng đặc nhiệm Spetsnaz của Nga phô diễn sức mạnh khi tác chiến">
+                                        </a>
+                                    </div>
+                                    <h4 class="story__heading">
+                                        <a href="" target="_blank">Chiêm ngưỡng đặc nhiệm Spetsnaz của Nga phô diễn sức mạnh khi tác chiến</a>
+                                    </h4>
+                                    <div class="story__meta">
+                                        <a href="" class="source">Kiến thức</a>
+                                        <time class="time friendly" datetime="2020-04-04T19:30:00.000+07:00">1 phút</time>
+                                    </div>
+                                </div>
+                                <div class="story story--video" data-track="|index1">
+                                    <div class="story__thumb">
+                                        <a href="">
+                                            <img src="\Content\assets\img\WC.jpg" alt="Chiếu lại 20 bàn thắng đẹp nhất lịch sử World Cup">
+                                        </a>
+                                    </div>
+                                    <h4 class="story__heading">
+                                        <a href="" target="_blank">Chiếu lại 20 bàn thắng đẹp nhất lịch sử World Cup</a>
+                                    </h4>
+                                    <div class="story__meta">
+                                        <a href="" class="source">VietnamNet</a>
+                                        <time class="time friendly" datetime="2020-04-04T20:43:36.000+07:00">4 phút</time>
+                                    </div>
+                                </div>
+                                <div class="story story--video" data-track="|index2">
+                                    <div class="story__thumb">
+                                        <a href="">
+                                            <img src="\Content\assets\img\eLearning.jpg" alt="HIỆU QUẢ HỌC TRỰC TUYẾN CHƯA ĐỒNG BỘ">
+                                        </a>
+                                    </div>
+                                    <h4 class="story__heading">
+                                        <a href="" target="_blank">HIỆU QUẢ HỌC TRỰC TUYẾN CHƯA ĐỒNG BỘ</a>
+                                    </h4>
+                                    <div class="story__meta">
+                                        <a href="" class="source">Quốc Hội TV</a>
+                                        <time class="time friendly" datetime="2020-04-04T20:43:01.000+07:00">4 phút</time>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="rightBox-2" data-track="|photo_box">
+                            <h2 class="block__header">
+                                <a href="Photo.html">
+                                    <span>Photo</span>
+                                </a>
+                            </h2>
+                            <div class="rightBox-2__content">
+                                <div class="story story--video story--photo" data-track="|index0">
+                                    <div class="story__thumb">
+                                        <a href="">
+                                            <img src="\Content\assets\img\House.jpg" alt="Ngôi nhà lấy ý tưởng từ câu chuyện cổ tích">
+                                        </a>
+                                    </div>
+                                    <h4 class="story__heading">
+                                        <a href="" target="_blank">Ngôi nhà lấy ý tưởng từ câu chuyện cổ tích</a>
+                                    </h4>
+                                    <div class="story__meta">
+                                        <a href="" class="source">Doanh Nghiệp</a>
+                                        <time class="time friendly" datetime="2020-04-04T19:30:00.000+07:00">1 phút</time>
+                                    </div>
+                                </div>
+                                <div class="story story--video" data-track="|index1">
+                                    <div class="story__thumb">
+                                        <a href="">
+                                            <img src="\Content\assets\img\com.jpg" alt="6 cách chế biến món cơm rang ngon miệng">
+                                        </a>
+                                    </div>
+                                    <h4 class="story__heading">
+                                        <a href="" target="_blank">6 cách chế biến món cơm rang ngon miệng</a>
+                                    </h4>
+                                    <div class="story__meta">
+                                        <a href="" class="source">Zing</a>
+                                        <time class="time friendly" datetime="2020-04-04T20:43:36.000+07:00">14 phút</time>
+                                    </div>
+                                </div>
+                                <div class="story story--video" data-track="|index2">
+                                    <div class="story__thumb">
+                                        <a href="">
+                                            <img src="\Content\assets\img\island.jpg" alt="Điểm danh 8 hòn đảo đáng sợ nhất thế giới">
+                                        </a>
+                                    </div>
+                                    <h4 class="story__heading">
+                                        <a href="" target="_blank">Điểm danh 8 hòn đảo đáng sợ nhất thế giới</a>
+                                    </h4>
+                                    <div class="story__meta">
+                                        <a href="" class="source">Doanh Nghiệp</a>
+                                        <time class="time friendly" datetime="2020-04-04T20:43:01.000+07:00">28 phút</time>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="utilities"></div>
+                        <div class="trending" data-track="|tagcloud_box">
+                            <h2 class="block__header"><span>Xu hướng</span></h2>
+                            <div class="trending__content">
+                                <span class="down w17"><a href="">bộ y tế</a></span>
+
+                                <span class="up w13"><a href="">CORONA</a></span>
+
+                                <span class="down w16"><a href="">bệnh viện bạch mai</a></span>
+
+                                <span class="down w6"><a href="">Chỉ thị số 16/CT-TTg</a></span>
+
+                                <span class="up w18"><a href="">vi-rút</a></span>
+
+                                <span class="up w4"><a href="">Nguyễn Minh Tuấn</a></span>
+
+                                <span class="up w20"><a href="">COVID-19</a></span>
+
+                                <span class="down w12"><a href="">Nguyễn Thị Lan Anh</a></span>
+
+                                <span class="down w8"><a href="">Đặng Thanh Tuấn</a></span>
+
+                                <span class="up w1"><a href="">Lâm Du</a></span>
+
+                                <span class="up w2"><a href="">thụy điển</a></span>
+
+                                <span class="down w19"><a href="">SARS-COV-2</a></span>
+
+                                <span class="up w5"><a href="">Bệnh viện Đà Nẵng</a></span>
+
+                                <span class="up w14"><a href="">THPT quốc gia 2020</a></span>
+
+                                <span class="up w7"><a href="">viện vệ sinh dịch tễ trung ương</a></span>
+
+                                <span class="down w10"><a href="">Bệnh viện Bệnh Nhiệt</a></span>
+
+                                <span class="up w3"><a href="">khách sạn Sao</a></span>
+
+                                <span class="up w15"><a href="">bệnh viện việt pháp</a></span>
+
+                                <span class="up w11"><a href="">Võ Văn Toàn</a></span>
+
+                                <span class="down w9"><a href="">quán bar Buddha</a></span>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer">
+                <div class="footer__bar"></div>
+                <div class="l-grid">
+                    <div class="footer__tagcloud">
+                        <a href="">
+                            IPhone Xr
+                        </a>
+
+                        <span>•</span>
+
+                        <a href="">
+                            Tuyển việt nam
+                        </a>
+
+                        <span>•</span>
+
+                        <a href="">
+                            Triều tiên
+                        </a>
+
+                        <span>•</span>
+
+                        <a href="">
+                            Apple Watch Series 5
+                        </a>
+
+                        <span>•</span>
+
+                        <a href="">
+                            MAX
+                        </a>
+
+                        <span>•</span>
+
+                        <a href="">
+                            Ronaldo
+                        </a>
+
+                        <span>•</span>
+
+                        <a href="">
+                            Simon McMenemy
+                        </a>
+
+                        <span>•</span>
+
+                        <a href="">
+                            Chip
+                        </a>
+
+                        <span>•</span>
+
+                        <a href="">
+                            World Cup 2022
+                        </a>
+
+                        <span>•</span>
+
+                        <a href="">
+                            John Bolton
+                        </a>
+
+                        <span>•</span>
+
+                        <a href="">
+                            IPhone Xs Max
+                        </a>
+
+                        <span>•</span>
+
+                        <a href="">
+                            IPhone 2019
+                        </a>
+
+                        <span>•</span>
+
+                        <a href="">
+                            Washington
+                        </a>
+
+                        <span>•</span>
+
+                        <a href="">
+                            NEYMAR
+                        </a>
+
+                        <span>•</span>
+
+                        <a href="">
+                            Malaysia
+                        </a>
+
+                        <span>•</span>
+
+                        <a href="">
+                            Ipad
+                        </a>
+
+                        <span>•</span>
+
+                        <a href="">
+                            Euro 2020
+                        </a>
+
+                        <span>•</span>
+
+                        <a href="">
+                            IPhone 11 Pro Max
+                        </a>
+
+                        <span>•</span>
+
+                        <a href="">
+                            F/2
+                        </a>
+
+                        <span>•</span>
+
+                        <a href="">
+                            Đội tuyển thái lan
+                        </a>
+
+                        <span>•</span>
+
+                        <a href="">
+                            Manchester United
+                        </a>
+
+                        <span>•</span>
+
+                        <a href="">
+                            IPhone 11 Pro
+                        </a>
+
+                        <span>•</span>
+
+                        <a href="">
+                            Lithuania
+                        </a>
+
+                        <span>•</span>
+
+                        <a href="">
+                            Philippe Troussier
+                        </a>
+
+                        <span>•</span>
+
+                        <a href="">
+                            Nhà Trắng
+                        </a>
+
+                        <span>•</span>
+
+                        <a href="">
+                            Pro Max
+                        </a>
+
+                        <span>•</span>
+
+                        <a href="">
+                            Xs Max
+                        </a>
+
+                        <span>•</span>
+
+                        <a href="">
+                            PRO
+                        </a>
+
+                        <span>•</span>
+
+                        <a href="">
+                            Thái Lan
+                        </a>
+
+                        <span>•</span>
+
+                        <a href="">
+                            Sân Bung Karno
+                        </a>
+
+                        <span>•</span>
+
+                        <a href="">
+                            IPhone 11
+                        </a>
+
+                        <span>•</span>
+
+                        <a href="">
+                            Apple
+                        </a>
+
+                        <span>•</span>
+
+                        <a href="">
+                            U22 Trung Quốc
+                        </a>
+
+                        <span>•</span>
+
+                        <a href="">
+                            Iran
+                        </a>
+
+                        <span>•</span>
+
+                        <a href="">
+                            IPhone Xs
+                        </a>
+
+                        <span>•</span>
+
+                        <a href="">
+                            Indonesia
+                        </a>
+
+                        <span>•</span>
+
+                        <a href="">
+                            PARK
+                        </a>
+
+                        <span>•</span>
+
+                        <a href="">
+                            Smartphone
+                        </a>
+
+                        <span>•</span>
+
+                        <a href="">
+                            Tiểu vương quốc ả rập thống nhất
+                        </a>
+
+                        <span>•</span>
+
+                        <a href="">
+                            Bolton
+                        </a>
+
+                        <span>•</span>
+
+                        <a href="">
+                            Poker
+                        </a>
+
+                        <span>•</span>
+
+                        <a href="">
+                            Afghanistan
+                        </a>
+
+                        <span>•</span>
+
+                        <a href="">
+                            Kosovo
+                        </a>
+
+                        <span>•</span>
+
+                        <a href="">
+                            Iphone
+                        </a>
+
+                        <span>•</span>
+
+                        <a href="">
+                            Nguyễn Trọng Trình
+                        </a>
+
+                        <span>•</span>
+
+                        <a href="">
+                            Donald Trump
+                        </a>
+
+                        <span>•</span>
+
+                        <a href="">
+                            Trung thu
+                        </a>
+
+                        <span>•</span>
+
+                        <a href="">
+                            Độ phân giải
+                        </a>
+
+                        <span>•</span>
+
+                        <a href="">
+                            Taliban
+                        </a>
+
+                        <span>•</span>
+
+                        <a href="">
+                            Trump
+                        </a>
+
+                        <span>•</span>
+
+                        <a href="">
+                            Công ty Rạng Đông
+                        </a>
+
+                        <span>•</span>
+
+                        <a href="">
+                            Super Retina XDR
+                        </a>
+
+                        <span>•</span>
+
+                        <a href="">
+                            Akira Nishino
+                        </a>
+
+                        <span>•</span>
+
+                        <a href="">
+                            Tổng thống Mỹ
+                        </a>
+
+                        <span>•</span>
+
+                        <a href=" i">
+                            Apple Watch
+                        </a>
+
+                        <span>•</span>
+
+                        <a href="">
+                            Ali Mabkhout
+                        </a>
+
+                        <span>•</span>
+
+                        <a href="">
+                            Ji Chang Wook
+                        </a>
+
+                        <span>•</span>
+
+                        <a href="">
+                            Bung Karno
+                        </a>
+
+                        <span>•</span>
+
+                        <a href="">
+                            Deep Fusion
+                        </a>
+
+                        <span>•</span>
+
+                        <a href="">
+                            A13 Bionic
+                        </a>
+                    </div>
+                    <div class="footer__siteIndex">
+                        <div class="column">
+                            <h4>LIÊN HỆ</h4>
+                            <ul>
+                                <li>
+                                    <a href="">Giới thiệu</a>
+                                </li>
+                                <li>
+                                    <a href="">Điều khoản sử dụng</a>
+                                </li>
+                                <li>
+                                    <a href="">Quảng cáo</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="footer__copyRight">
+                        <p>
+                            Giấy phép số 1818/GP-TTĐT do Sở Thông tin và Truyền thông Hà Nội cấp ngày 15/04/1999
+                            <br>
+                            Đơn vị chủ quản: Công ty Cổ phần Công nghệ Thật Vi Diệu * Chịu trách nhiệm: Phạm Minh Tuấn
+                            <br>
+                            Địa chỉ: Học viện kỹ thuật quân sự - 236 Hoàng Quốc Việt, Cổ Nhuế, Bắc Từ Liêm, Hà Nội
+                            <br>
+                            Tel: (84) 123-456-789-0.
+                        </p>
+                        <p>
+                            GLOBAL NEWS tổng hợp và sắp xếp các thông tin tự động
+                            <br>
+                            bởi chương trình máy tính
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
