@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+}
+
+<div class="breadcrumb">
+    <a class="cate" href="">Đăng nhập</a>
+
+</div>
+
+<div style="text-align:center">@ViewBag.error</div>
+
+<form method="post">
+    <label for="uname" id="un">Username:</label>
+    <input type="text" name="user" placeholder="Enter Username" id="uname"><br /><br />
+
+    <label for="upass" id="ps">Password:</label>
+    <input type="password" name="pass" placeholder="Enter Password" id="upass"><br /><br />
+
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <button type="submit" id="submit">Đăng nhập</button>
+    <button type="button" id="register" onclick="location.href='@Url.Action("Register","Home")'">Đăng ký</button>
+</form>
+

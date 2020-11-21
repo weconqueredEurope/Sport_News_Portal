@@ -12,6 +12,14 @@ namespace Sport_News_Portal.Controllers
         {
             return View(ReadRSSFeedMVC.Models.RssReader.GetRssFeed("https://bongda24h.vn/RSS/279.rss"));
         }
+        public ActionResult Login()
+        {
+            return View();
+        }
+        public ActionResult Register()
+        {
+            return View();
+        }
 
     }
 }
