@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace ReadRSSFeedMVC.Models
+namespace Sport_News_Portal.Models
 {
     public class Rss
     {

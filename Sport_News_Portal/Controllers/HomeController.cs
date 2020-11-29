@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Sport_News_Portal.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,7 +11,8 @@ namespace Sport_News_Portal.Controllers
     {
         public ActionResult Index()
         {
-            return View(ReadRSSFeedMVC.Models.RssReader.GetRssFeed("https://bongda24h.vn/RSS/279.rss"));
+            ViewBag.RSS = RssReader.GetRssFeed("https://bongda24h.vn/RSS/279.rss");
+            return View();
         }
         public ActionResult Login()
         {

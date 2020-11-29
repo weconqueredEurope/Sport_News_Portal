@@ -5,7 +5,7 @@ using System.Text.RegularExpressions;
 using System.Web;
 using System.Xml.Linq;
 
-namespace ReadRSSFeedMVC.Models
+namespace Sport_News_Portal.Models
 {
     public class RssReader
     {
