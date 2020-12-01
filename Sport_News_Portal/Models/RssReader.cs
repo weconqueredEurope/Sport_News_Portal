@@ -25,5 +25,18 @@ namespace Sport_News_Portal.Models
                         };
             return feeds;
         }
+        public static IEnumerable<Rss> GetRssFeed2(string _blogURL)
+        {
+            XDocument feedXml = XDocument.Load(_blogURL);
+            var feeds = from feed in feedXml.Descendants("item")
+                        select new Rss
+                        {
+                            Title = feed.Element("title").Value,
+                            Link = feed.Element("link").Value,
+                            Description = Regex.Match(feed.Element("description").Value, @"(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|gif|png)").Value,
+                            PubDate = feed.Element("pubDate").Value
+                        };
+            return feeds;
+        }
     }
 }

@@ -120,6 +120,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -1960,6 +1961,15 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Login.cshtml" />
     <Content Include="Views\Home\Register.cshtml" />
+    <Content Include="Views\Category\TTVN.cshtml" />
+    <Content Include="Views\Category\C1.cshtml" />
+    <Content Include="Views\Category\BDAnh.cshtml" />
+    <Content Include="Views\Category\BDDuc.cshtml" />
+    <Content Include="Views\Category\BDTBN.cshtml" />
+    <Content Include="Views\Category\BDItalia.cshtml" />
+    <Content Include="Views\Category\Tennis.cshtml" />
+    <Content Include="Views\Category\DuaXe.cshtml" />
+    <Content Include="Views\Category\CauLong.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
