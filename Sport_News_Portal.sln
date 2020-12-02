@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sport_News_Portal", "Sport_News_Portal\Sport_News_Portal.csproj", "{FEB283E5-AAAE-46E8-A8A2-CCA4A0A46C5B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServicesWebDB", "ServicesWebDB\ServicesWebDB.csproj", "{4CB60DDE-56E9-4F4A-9534-AB92F67AB291}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{FEB283E5-AAAE-46E8-A8A2-CCA4A0A46C5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FEB283E5-AAAE-46E8-A8A2-CCA4A0A46C5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FEB283E5-AAAE-46E8-A8A2-CCA4A0A46C5B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4CB60DDE-56E9-4F4A-9534-AB92F67AB291}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4CB60DDE-56E9-4F4A-9534-AB92F67AB291}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4CB60DDE-56E9-4F4A-9534-AB92F67AB291}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4CB60DDE-56E9-4F4A-9534-AB92F67AB291}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
