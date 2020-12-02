@@ -1,0 +1,78 @@
+﻿@using Sport_News_Portal.Models
+@{
+    ViewBag.Title = "Details";
+    ThanhVien curAcc = (ThanhVien)Session["ThanhVien"];
+}
+@model BinhLuan
+<div class="breadcrumb">
+    <a class="cate" href="">bài viết</a>
+</div>
+
+<div class="article">
+    <h1 class="article__header">
+        @ViewBag.TinTuc.TieuDe
+    </h1>
+    <div class="article__meta">
+        <div class="source">
+            @ViewBag.TinTuc.TacGia
+            <i class="fal fa-star"></i>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            @ViewBag.TinTuc.NgayDang.ToShortDateString()
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            @ViewBag.TinTuc.NgayDang.TimeOfDay
+        </div>
+    </div>
+    <div class="article__sapo">
+        @ViewBag.TinTuc.MoTa
+    </div>
+    <div class="article__body">
+        @Html.Raw(ViewBag.TinTuc.NoiDung)
+        <br /><br />
+        <p class="body-text body-author"><strong>@ViewBag.TinTuc.TacGia</strong></p>
+    </div>
+</div>
+<div class="timeline loadmore" data-track="|timeline"
+     style="padding-bottom: 1px;
+            position: relative;
+            border-bottom: 1px solid #ccc;">
+    <div class="breadcrumb">
+        <a class="cate" href="">Bình luận</a>
+    </div>
+    <br>
+    @foreach (var item in ViewBag.TinTuc.BinhLuans)
+    {
+        <div class="story" style="width: 100%;
+            border-bottom: 1px solid #dee2e6;
+            margin-bottom: 10px;
+            padding-top: 1px;
+            border-top: 0;
+            margin-top: 0;">
+            <div class="user">
+                <div class="username" style="font-size: larger; color:darkcyan;">@item.ThanhVien.Ho @item.ThanhVien.Ten</div>
+                <div class="datepost" style="font-size: 12px; margin-top: 2px; margin-bottom: 10px;">@item.NgayDangBL</div>
+                <div class="comment-content" style="font-size: 18px; margin-top: 12px; margin-bottom: 4px;">@item.NoiDungBinhLuan</div>
+            </div>
+        </div>
+    }
+    <br />
+    @if (Session["ThanhVien"] == null)
+    {
+        <button type="button" id="register" style="width: 180px; margin-left: 0; margin-top: 0;"
+                onclick="location.href='@Url.Action("Login","Home")'">
+            Đăng nhập để bình luận
+        </button>
+
+    }
+    else
+    {
+        using (Html.BeginForm("BinhLuans", "Home", FormMethod.Post))
+        {
+            <div class="user">
+            </div>
+            @Html.TextAreaFor(Model => Model.NoiDungBinhLuan, new { cols = 85, rows = 10, @style = "resize:none" })
+            <button type="submit" id="register" style="width: 80px; margin-left: 0; ">Gửi</button>
+            @Html.HiddenFor(Model => Model.id_TT)
+        }
+    }
+
+</div>

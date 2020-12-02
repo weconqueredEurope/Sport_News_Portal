@@ -45,10 +45,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -125,8 +133,17 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helper\PasswordStorage.cs" />
+    <Compile Include="Models\BinhLuan.cs" />
+    <Compile Include="Models\ChuyenMuc.cs" />
+    <Compile Include="Models\CongTacVien.cs" />
+    <Compile Include="Models\PhanQuyen.cs" />
     <Compile Include="Models\Rss.cs" />
     <Compile Include="Models\RssReader.cs" />
+    <Compile Include="Models\SportsModel.cs" />
+    <Compile Include="Models\ThanhVien.cs" />
+    <Compile Include="Models\ThongKe.cs" />
+    <Compile Include="Models\TinTuc.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -1728,147 +1745,8 @@
     <Content Include="Content\assets\fonts\fontawesome-free-5.12.1\webfonts\fa-regular-400.svg" />
     <Content Include="Content\assets\fonts\fontawesome-free-5.12.1\webfonts\fa-solid-900.svg" />
     <Content Include="Content\assets\img\banner_hcm_02-min.png" />
-    <Content Include="Content\assets\img\Bayern.jpg" />
-    <Content Include="Content\assets\img\com.jpg" />
-    <Content Include="Content\assets\img\diseaseVN.jpg" />
-    <Content Include="Content\assets\img\eLearning.jpg" />
     <Content Include="Content\assets\img\Global-News-01.png" />
-    <Content Include="Content\assets\img\HNxuphat.jpg" />
-    <Content Include="Content\assets\img\House.jpg" />
-    <Content Include="Content\assets\img\Indcovid.jpg" />
-    <Content Include="Content\assets\img\island.jpg" />
-    <Content Include="Content\assets\img\keodaicachly.jpg" />
     <Content Include="Content\assets\img\Logo.jpg" />
-    <Content Include="Content\assets\img\news\018240d72494cdca9485.jpg" />
-    <Content Include="Content\assets\img\news\05c10fe963aa8af4d3bb.jpg" />
-    <Content Include="Content\assets\img\news\07c680cfec8c05d25c9d.jpg" />
-    <Content Include="Content\assets\img\news\0be4784b0b08e256bb19.jpg" />
-    <Content Include="Content\assets\img\news\0db1bd59cb1a22447b0b.jpg" />
-    <Content Include="Content\assets\img\news\0e776848050bec55b51a.jpg" />
-    <Content Include="Content\assets\img\news\12b68e77fd34146a4d25.jpg" />
-    <Content Include="Content\assets\img\news\1a833d132550cc0e9541.jpg" />
-    <Content Include="Content\assets\img\news\1b31fc069045791b2054.jpg" />
-    <Content Include="Content\assets\img\news\1c6ef4f898bb71e528aa.jpg" />
-    <Content Include="Content\assets\img\news\1f9233c45f87b6d9ef96.jpg" />
-    <Content Include="Content\assets\img\news\20b4ddb3b0f059ae00e1.jpg" />
-    <Content Include="Content\assets\img\news\24630d8e63cd8a93d3dc.jpg" />
-    <Content Include="Content\assets\img\news\25a4dcafb9ec50b209fd.jpg" />
-    <Content Include="Content\assets\img\news\2715040273419a1fc350.jpg" />
-    <Content Include="Content\assets\img\news\28a27bf317b0feeea7a1.jpg" />
-    <Content Include="Content\assets\img\news\28afbb82d7c13e9f67d0.jpg" />
-    <Content Include="Content\assets\img\news\2a8663b210f1f9afa0e0.jpg" />
-    <Content Include="Content\assets\img\news\2be687c2eb8102df5b90.jpg" />
-    <Content Include="Content\assets\img\news\2f9d989df4de1d8044cf.jpg" />
-    <Content Include="Content\assets\img\news\301c23e01ba3f2fdabb2.jpg" />
-    <Content Include="Content\assets\img\news\3068db7fa83c4162182d.jpg" />
-    <Content Include="Content\assets\img\news\324a9e7df23e1b60422f.jpg" />
-    <Content Include="Content\assets\img\news\37ec6ea31de0f4beadf1.jpg" />
-    <Content Include="Content\assets\img\news\381ff7889bcb72952bda.jpg" />
-    <Content Include="Content\assets\img\news\395ce0c28c8165df3c90.jpg" />
-    <Content Include="Content\assets\img\news\39c24b212762ce3c9773.jpg" />
-    <Content Include="Content\assets\img\news\42b8e77294317d6f2420.jpg" />
-    <Content Include="Content\assets\img\news\4668549127d2ce8c97c3.jpg" />
-    <Content Include="Content\assets\img\news\4a0add64ae2747791e36.jpg" />
-    <Content Include="Content\assets\img\news\4a629640fa03135d4a12.jpg" />
-    <Content Include="Content\assets\img\news\4b0820344c77a529fc66.jpg" />
-    <Content Include="Content\assets\img\news\4ba863b30ef0e7aebee1.jpg" />
-    <Content Include="Content\assets\img\news\4e5bf0399d7a74242d6b.jpg" />
-    <Content Include="Content\assets\img\news\4f5a67240b67e239bb76.jpg" />
-    <Content Include="Content\assets\img\news\53fdcfefa2ac4bf212bd.jpg" />
-    <Content Include="Content\assets\img\news\58c1d55eb91d5043090c.jpg" />
-    <Content Include="Content\assets\img\news\5d29d73ca47f4d21146e.jpg" />
-    <Content Include="Content\assets\img\news\5efb56e93baad2f48bbb.jpg" />
-    <Content Include="Content\assets\img\news\612010c07c8395ddcc92.jpg" />
-    <Content Include="Content\assets\img\news\6864c08eaccd45931cdc.jpg" />
-    <Content Include="Content\assets\img\news\68d0c5dba09849c61089.jpg" />
-    <Content Include="Content\assets\img\news\69370b2166628f3cd673.jpg" />
-    <Content Include="Content\assets\img\news\6a6097ecfbaf12f14bbe.jpg" />
-    <Content Include="Content\assets\img\news\6a8c231a4e59a707fe48.jpg" />
-    <Content Include="Content\assets\img\news\6af1d467b924507a0935.jpg" />
-    <Content Include="Content\assets\img\news\6c3e27e354a0bdfee4b1.jpg" />
-    <Content Include="Content\assets\img\news\6d1192a2ffe116bf4ff0.jpg" />
-    <Content Include="Content\assets\img\news\704a8feefdad14f34dbc.jpg" />
-    <Content Include="Content\assets\img\news\71e7e20f8e4c67123e5d.jpg" />
-    <Content Include="Content\assets\img\news\77924aab26e8cfb696f9.jpg" />
-    <Content Include="Content\assets\img\news\78cb28544117a849f106.jpg" />
-    <Content Include="Content\assets\img\news\7952f0459d0674582d17.jpg" />
-    <Content Include="Content\assets\img\news\7a511dde719d98c3c18c.jpg" />
-    <Content Include="Content\assets\img\news\7b1754553816d1488807.jpg" />
-    <Content Include="Content\assets\img\news\7c882d405e03b75dee12.jpg" />
-    <Content Include="Content\assets\img\news\7d9566850bc6e298bbd7.jpg" />
-    <Content Include="Content\assets\img\news\87c131df429cabc2f28d.jpg" />
-    <Content Include="Content\assets\img\news\8b9f25bd48fea1a0f8ef.jpg" />
-    <Content Include="Content\assets\img\news\8e7727c14b82a2dcfb93.jpg" />
-    <Content Include="Content\assets\img\news\8eb0044077039e5dc712.jpg" />
-    <Content Include="Content\assets\img\news\951291cefd8d14d34d9c.jpg" />
-    <Content Include="Content\assets\img\news\9bb959453c06d5588c17.jpg" />
-    <Content Include="Content\assets\img\news\9ed0158b78c89196c8d9.jpg" />
-    <Content Include="Content\assets\img\news\a521e62a95697c372578.jpg" />
-    <Content Include="Content\assets\img\news\a698d4baddf934a76de8.jpg" />
-    <Content Include="Content\assets\img\news\a6d5432e306dd933807c.jpg" />
-    <Content Include="Content\assets\img\news\a928a4c9c88a21d4789b.jpg" />
-    <Content Include="Content\assets\img\news\ad838483f4c01d9e44d1.jpg" />
-    <Content Include="Content\assets\img\news\b56eb3665f23b67def32.jpg" />
-    <Content Include="Content\assets\img\news\bbc3361a5a59b307ea48.jpg" />
-    <Content Include="Content\assets\img\news\bbee1ff56cb685e8dca7.jpg" />
-    <Content Include="Content\assets\img\news\bc13cdc3a18048de1191.jpg" />
-    <Content Include="Content\assets\img\news\be0f3c28516bb835e17a %281%29.jpg" />
-    <Content Include="Content\assets\img\news\be0f3c28516bb835e17a.jpg" />
-    <Content Include="Content\assets\img\news\be7ef09f9cdc75822ccd.jpg" />
-    <Content Include="Content\assets\img\news\bf2744a737e4deba87f5.jpg" />
-    <Content Include="Content\assets\img\news\c080ae4cdd0f34516d1e.jpg" />
-    <Content Include="Content\assets\img\news\c0d3a294ced727897ec6.jpg" />
-    <Content Include="Content\assets\img\news\c2d101356d768428dd67.jpg" />
-    <Content Include="Content\assets\img\news\c3ecb4d0a19348cd1182.jpg" />
-    <Content Include="Content\assets\img\news\c717a717d5543c0a6545.jpg" />
-    <Content Include="Content\assets\img\news\caa6c65aaa1943471a08.jpg" />
-    <Content Include="Content\assets\img\news\cb53babfd4fc3da264ed.jpg" />
-    <Content Include="Content\assets\img\news\cf3ae9de109ff9c1a08e.jpg" />
-    <Content Include="Content\assets\img\news\covid19VN.jpg" />
-    <Content Include="Content\assets\img\news\d1e2af73c2302b6e7221.jpg" />
-    <Content Include="Content\assets\img\news\d5a2c418a85b4105184a.jpg" />
-    <Content Include="Content\assets\img\news\d5c60d9f7cdc9582cccd.jpg" />
-    <Content Include="Content\assets\img\news\d733e12c936f7a31237e.jpg" />
-    <Content Include="Content\assets\img\news\d86622ab51e8b8b6e1f9.jpg" />
-    <Content Include="Content\assets\img\news\e2742e8c50cfb991e0de.jpg" />
-    <Content Include="Content\assets\img\news\e2908051f3121a4c4303.jpg" />
-    <Content Include="Content\assets\img\news\e70ebe1ccd5f24017d4e.jpg" />
-    <Content Include="Content\assets\img\news\ebf74d3e3e7dd7238e6c.jpg" />
-    <Content Include="Content\assets\img\news\ec48b67ada3933676a28.jpg" />
-    <Content Include="Content\assets\img\news\ed72a829c46a2d34747b.jpg" />
-    <Content Include="Content\assets\img\news\ef3755552516cc489507.jpg" />
-    <Content Include="Content\assets\img\news\efcdabdfd89c31c2688d.jpg" />
-    <Content Include="Content\assets\img\news\f810be2cd26f3b31627e.jpg" />
-    <Content Include="Content\assets\img\news\f83c8b49e60a0f54561b.jpg" />
-    <Content Include="Content\assets\img\news\f8fe93fbffb816e64fa9.jpg" />
-    <Content Include="Content\assets\img\news\fccf74010742ee1cb753.jpg" />
-    <Content Include="Content\assets\img\news\ff387c2e116df833a17c.jpg" />
-    <Content Include="Content\assets\img\Spetsnaz.jpg" />
-    <Content Include="Content\assets\img\TBN.jpg" />
-    <Content Include="Content\assets\img\TBT.png" />
-    <Content Include="Content\assets\img\timeline-more\Chim.jpg" />
-    <Content Include="Content\assets\img\timeline-more\DBSCL.jpg" />
-    <Content Include="Content\assets\img\timeline-more\HH.jpg" />
-    <Content Include="Content\assets\img\timeline-more\Indo.jpg" />
-    <Content Include="Content\assets\img\timeline-more\ktrang.jpg" />
-    <Content Include="Content\assets\img\timeline-more\LX.jpg" />
-    <Content Include="Content\assets\img\timeline-more\Man.jpg" />
-    <Content Include="Content\assets\img\timeline-more\My2.jpg" />
-    <Content Include="Content\assets\img\timeline-more\MyDL.jpg" />
-    <Content Include="Content\assets\img\timeline-more\NB.jpg" />
-    <Content Include="Content\assets\img\timeline-more\NB1.jpg" />
-    <Content Include="Content\assets\img\timeline-more\ThienNhien.jpg" />
-    <Content Include="Content\assets\img\timeline-more\thuytinh.jpg" />
-    <Content Include="Content\assets\img\timeline-more\USFK.jpg" />
-    <Content Include="Content\assets\img\TQcovid.jpg" />
-    <Content Include="Content\assets\img\TT.jpg" />
-    <Content Include="Content\assets\img\UScovid.jpg" />
-    <Content Include="Content\assets\img\vacxin.jpg" />
-    <Content Include="Content\assets\img\VNcovid1.jpg" />
-    <Content Include="Content\assets\img\VNcovidnonew.jpg" />
-    <Content Include="Content\assets\img\VNYte.jpg" />
-    <Content Include="Content\assets\img\WC.jpg" />
-    <Content Include="Content\assets\img\worldnews.jpg" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -1970,6 +1848,7 @@
     <Content Include="Views\Category\Tennis.cshtml" />
     <Content Include="Views\Category\DuaXe.cshtml" />
     <Content Include="Views\Category\CauLong.cshtml" />
+    <Content Include="Views\Home\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

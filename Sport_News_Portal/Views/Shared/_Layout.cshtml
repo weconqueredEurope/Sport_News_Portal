@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using Sport_News_Portal.Models
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -28,16 +29,31 @@
                     </button>
                 </div>
                 <div class="header__user">
-                    <div class="register">
-                        <a href="/Home/Register" class="register-link">
-                            <i class="register-link--icon fal fa-registered"></i>
-                        </a>
-                    </div>
-                    <div class="login">
-                        <a href="/Home/Login" class="login-link">
-                            <i class="login-link--icon fal fa-user"></i>
-                        </a>
-                    </div>
+                    @if (Session["ThanhVien"] == null)
+                    {
+                        <div class="register">
+                            <a href="/Home/Register" class="register-link">
+                                <i class="register-link--icon fal fa-registered"></i>
+                            </a>
+                        </div>
+                        <div class="login">
+                            <a href="~/Home/Login" class="login-link">
+                                <i class="login-link--icon fal fa-user"></i>
+                            </a>
+                        </div>
+                    }
+                    else
+                    {
+                        var @tv = Session["ThanhVien"] as ThanhVien;
+                        <div class="login" style="border-bottom:1px solid #ccc">
+                            Xin chào, @tv.Ho @tv.Ten
+                        </div>
+                        <div class="register" style="border-top:1px solid #ccc">
+                            <a href="~/Home/Logout" class="login-link">
+                                Đăng Xuất
+                            </a>
+                        </div>
+                    }
                 </div>
                 <div class="header__setting">
                     <a href="" class="header__setting-noti">

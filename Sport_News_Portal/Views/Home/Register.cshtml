@@ -1,4 +1,4 @@
-﻿
+﻿@model Sport_News_Portal.Models.ThanhVien
 @{
     ViewBag.Title = "Register";
 }
@@ -8,28 +8,56 @@
     <
 </div>
 <div id="register__container">
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
 
-    <label for="r1" id="fn">Full Name :</label>
-    <input type="text" name="fname" id="r1"><br />
-
-    <label for="r3" id="un">Username :</label>
-    <input type="text" name="uname" id="r2"><br />
-
-    &nbsp;<label for="r4" id="pwd">Password :</label>
-    <input type="password" name="pass" id="r3"><br />
-
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <label for="r5" id="em">Email :</label>
-    <input type="text" name="email" id="r4"><br />
-
-    <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-                <button type="submit" id="register">Đăng ký</button>
+        <div class="form-horizontal">
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <label for="r5" id="em">Email</label>&nbsp;:
+                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", @id = "r4", @name = "email" } })
+                <div class="col-md-10">
+                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                </div>
             </div>
-    </div>
 
+            <div class="form-group">
+                <label for="r4" id="pwd">Password :</label>
+                @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control", @id = "r4", @name = "pass", Type = "password" } })
+                <div class="col-md-10">
+                    @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <label for="r5" id="em">Họ : </label>
+                @Html.EditorFor(model => model.Ho, new { htmlAttributes = new { @class = "form-control", @id = "r1", @name = "fname" } })
+                <div class="col-md-10">
+                    @Html.ValidationMessageFor(model => model.Ho, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <label for="r5" id="em">Tên :</label>
+                @Html.EditorFor(model => model.Ten, new { htmlAttributes = new { @class = "form-control", @id = "r1", @name = "fname" } })
+                <div class="col-md-10">
+                    @Html.ValidationMessageFor(model => model.Ten, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                    <button type="submit" id="register">Đăng ký</button>
+                </div>
+            </div>
+        </div>
+    }
 </div>
 
