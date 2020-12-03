@@ -2,6 +2,7 @@
 using Sport_News_Portal.Models;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -35,28 +36,30 @@ namespace Sport_News_Portal.Controllers
         [HttpPost]
         public ActionResult Login(string email, string pass)
         {
-            ThanhVien tv = db.ThanhViens.SingleOrDefault(x => x.Email.Equals(email));
-            if (tv != null)
+            DBServices.DBServicesSoapClient client = new DBServices.DBServicesSoapClient();
+            int result = client.CheckLogin(email, pass);
+            if (result == 1)
             {
-                bool result = PasswordStorage.VerifyPassword(pass, tv.Password);
-                if (result)
-                {
-                    Session.Add("ThanhVien", tv);
-                    return RedirectToAction("Index", "Home");
-                }
-                else
+                ThanhVien tv = ConvertToOBJ.Convert(client.GetAccount(email));
+                Session.Add("ThanhVien", tv);
+                return RedirectToAction("Index", "Home");
+            }
+            else
+            {
+                if (result == 0)
                 {
                     @ViewBag.error = "Mật khẩu không hợp lệ";
 
                     return View("Login");
                 }
-            }
-            else
-            {
-                @ViewBag.error = "Tài khoản không hợp lệ";
+                else
+                {
+                    @ViewBag.error = "Tài khoản không hợp lệ";
 
-                return View("Login");
+                    return View("Login");
+                }
             }
+            
         }
         //Log out
         public ActionResult Logout()
