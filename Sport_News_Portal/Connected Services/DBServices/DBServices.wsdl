@@ -48,6 +48,27 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="GetAccountCTV">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAccountCTVResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAccountCTVResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="Search">
         <s:complexType>
           <s:sequence>
@@ -103,6 +124,12 @@
   <wsdl:message name="GetAccountSoapOut">
     <wsdl:part name="parameters" element="tns:GetAccountResponse" />
   </wsdl:message>
+  <wsdl:message name="GetAccountCTVSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAccountCTV" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountCTVSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAccountCTVResponse" />
+  </wsdl:message>
   <wsdl:message name="SearchSoapIn">
     <wsdl:part name="parameters" element="tns:Search" />
   </wsdl:message>
@@ -127,6 +154,10 @@
     <wsdl:operation name="GetAccount">
       <wsdl:input message="tns:GetAccountSoapIn" />
       <wsdl:output message="tns:GetAccountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountCTV">
+      <wsdl:input message="tns:GetAccountCTVSoapIn" />
+      <wsdl:output message="tns:GetAccountCTVSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="Search">
       <wsdl:input message="tns:SearchSoapIn" />
@@ -159,6 +190,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetAccount">
       <soap:operation soapAction="http://tempuri.org/GetAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountCTV">
+      <soap:operation soapAction="http://tempuri.org/GetAccountCTV" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -207,6 +247,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetAccount">
       <soap12:operation soapAction="http://tempuri.org/GetAccount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountCTV">
+      <soap12:operation soapAction="http://tempuri.org/GetAccountCTV" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

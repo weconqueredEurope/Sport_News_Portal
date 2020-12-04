@@ -37,12 +37,12 @@ namespace ServicesWebDB
         public int CheckLogin(string email, string pass)
         {
             ThanhVien tv = db.ThanhViens.SingleOrDefault(x => x.Email.Equals(email));
+            CongTacVien ctv = db.CongTacViens.SingleOrDefault(x => x.Username.Equals(email));
             if (tv != null)
             {
                 bool result = PasswordStorage.VerifyPassword(pass, tv.Password);
                 if (result)
                 {
-                    //Session.Add("ThanhVien", tv);
                     return 1;
                 }
                 else
@@ -54,9 +54,20 @@ namespace ServicesWebDB
             }
             else
             {
-                //@ViewBag.error = "Tài khoản không hợp lệ";
+                if (ctv != null)
+                {
+                    if (ctv.Password == pass)
+                    {
+                        return 2;
+                    }
+                    else return 0;
+                }
+                else
+                {
+                    return -1;
+                }
 
-                return -1;
+                
             }
         }
         [WebMethod]
@@ -81,6 +92,21 @@ namespace ServicesWebDB
             thanhVien.Rows.Add(tv.id,tv.Email,tv.Password,tv.Ho,tv.Ten,tv.NgayDK);
             ds.Tables.Add(thanhVien);
             return ds;
+        }
+        [WebMethod]
+        public DataTable GetAccountCTV(string Username)
+        {
+            DataTable result = new DataTable("GetAccCTV");
+            // Lấy dữ liệu
+            string strCommand = @"select ctv.id,ctv.Username,ctv.Password,ctv.Roles_id,ctv.Ho,ctv.Ten,ctv.Email,ctv.SDT
+                                    from CongTacVien ctv
+                                    where ctv.Username = N'"+Username+"'";
+            SqlCommand command = new SqlCommand(strCommand, Connection.conn);
+            SqlDataAdapter Adapter = new SqlDataAdapter(command);
+            Adapter.Fill(result);
+            Adapter.Dispose();
+            //Kết thúc lấy dữ liệu
+            return result;
         }
         //Search
         [WebMethod]

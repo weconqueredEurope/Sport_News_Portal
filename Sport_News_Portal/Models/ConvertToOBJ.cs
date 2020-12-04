@@ -43,5 +43,20 @@ namespace Sport_News_Portal.Models
             }
             return tt;
         }
+        public static CongTacVien Convert3(DataTable dt)
+        {
+            CongTacVien ctv = new CongTacVien();
+            DataRow rows = dt.Rows[0];
+            ctv.id = (int)rows["id"];
+            ctv.Username = (string)rows["Username"];
+            ctv.Password = (string)rows["Password"];
+            ctv.Roles_id = (int)rows["Roles_id"];
+            ctv.Ho = (string)rows["Ho"];
+            ctv.Ten = (string)rows["Ten"];
+            ctv.Email = (string)rows["Email"];
+            ctv.SDT = (int)rows["SDT"];
+
+            return ctv;
+        }
     }
 }

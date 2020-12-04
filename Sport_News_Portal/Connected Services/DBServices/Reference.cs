@@ -37,6 +37,13 @@ namespace Sport_News_Portal.DBServices {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetAccount", ReplyAction="*")]
         System.Threading.Tasks.Task<System.Data.DataSet> GetAccountAsync(string email);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetAccountCTV", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataTable GetAccountCTV(string Username);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetAccountCTV", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Data.DataTable> GetAccountCTVAsync(string Username);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Search", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         int Search(string keyword);
@@ -101,6 +108,14 @@ namespace Sport_News_Portal.DBServices {
         
         public System.Threading.Tasks.Task<System.Data.DataSet> GetAccountAsync(string email) {
             return base.Channel.GetAccountAsync(email);
+        }
+        
+        public System.Data.DataTable GetAccountCTV(string Username) {
+            return base.Channel.GetAccountCTV(Username);
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataTable> GetAccountCTVAsync(string Username) {
+            return base.Channel.GetAccountCTVAsync(Username);
         }
         
         public int Search(string keyword) {

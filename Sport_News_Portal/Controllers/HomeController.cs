@@ -68,6 +68,12 @@ namespace Sport_News_Portal.Controllers
             }
             else
             {
+                if (result == 2)
+                {
+                    CongTacVien ctv = ConvertToOBJ.Convert3(client.GetAccountCTV(email));
+                    Session.Add("CTV", ctv);
+                    return RedirectToAction("Index", "Home");
+                }
                 if (result == 0)
                 {
                     @ViewBag.error = "Mật khẩu không hợp lệ";
@@ -87,6 +93,7 @@ namespace Sport_News_Portal.Controllers
         public ActionResult Logout()
         {
             Session.Remove("ThanhVien");
+            Session.Remove("CTV");
             return RedirectToAction("Index", "Home");
         }
         //Register
@@ -113,13 +120,28 @@ namespace Sport_News_Portal.Controllers
         public ActionResult BinhLuans(BinhLuan bl)
         {
             ThanhVien tv = (ThanhVien)Session["ThanhVien"];
-            int username = tv.id;
-            bl.NgayDangBL = DateTime.Now;
-            bl.id_TV = db.ThanhViens.Single(x => x.id.Equals(tv.id)).id;
-            bl.id_CTV = 1;
-            db.BinhLuans.Add(bl);
-            db.SaveChanges();
+            CongTacVien ctv = (CongTacVien)Session["CTV"];
+            if (tv != null) 
+            {
+                int idTV = tv.id;
+                bl.NgayDangBL = DateTime.Now;
+                bl.id_TV = idTV;
+                db.BinhLuans.Add(bl);
+                db.SaveChanges();
+                return RedirectToAction("Details", "Home", new { @id = bl.id_TT });
+            }
+            if (ctv != null)
+            {
+                int idCTV = ctv.id;
+                bl.NgayDangBL = DateTime.Now;
+                bl.id_CTV = idCTV;
+                db.BinhLuans.Add(bl);
+                db.SaveChanges();
+                return RedirectToAction("Details", "Home", new { @id = bl.id_TT });
+            }
             return RedirectToAction("Details", "Home", new { @id = bl.id_TT });
+
+
         }
         protected override void Dispose(bool disposing)
         {
