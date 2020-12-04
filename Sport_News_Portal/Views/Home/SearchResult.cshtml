@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewBag.Title = "SearchResult";
+}
+
+@using Sport_News_Portal.Models;
+
+@model List<TinTuc>
+
+<div class="breadcrumb">
+    <a class="cate" href="">Tìm kiếm</a>
+</div>
+
+
+<div class="l-grid__main">
+    <div class="timeline loadmore" data-track="|timeline">
+        @foreach (TinTuc item in Model)
+        {
+            <div class="story" data-track="|index0">
+                <div class="story__thumb">
+                    <a href="/Home/Details/@item.id" target="_blank">
+                        <img src="@item.Thumbnails" alt="@item.TieuDe">
+                    </a>
+                </div>
+                <h4 class="story__heading">
+                    <a href="/Home/Details/@item.id" title="@item.TieuDe" target="_blank">@item.TieuDe</a>
+                </h4>
+                <div class="story__meta">
+                    <a class="source" href="/Home/Details/@item.id">@item.TacGia</a>
+                    <time class="time friendly" datetime="@item.NgayDang">@item.NgayDang</time>
+                </div>
+            </div>
+        }
+
+    </div>
+</div>
+

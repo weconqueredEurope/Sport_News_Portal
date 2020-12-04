@@ -36,6 +36,20 @@ namespace Sport_News_Portal.DBServices {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetAccount", ReplyAction="*")]
         System.Threading.Tasks.Task<System.Data.DataSet> GetAccountAsync(string email);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Search", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        int Search(string keyword);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Search", ReplyAction="*")]
+        System.Threading.Tasks.Task<int> SearchAsync(string keyword);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetTT", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataTable GetTT(string keyword);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetTT", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Data.DataTable> GetTTAsync(string keyword);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -87,6 +101,22 @@ namespace Sport_News_Portal.DBServices {
         
         public System.Threading.Tasks.Task<System.Data.DataSet> GetAccountAsync(string email) {
             return base.Channel.GetAccountAsync(email);
+        }
+        
+        public int Search(string keyword) {
+            return base.Channel.Search(keyword);
+        }
+        
+        public System.Threading.Tasks.Task<int> SearchAsync(string keyword) {
+            return base.Channel.SearchAsync(keyword);
+        }
+        
+        public System.Data.DataTable GetTT(string keyword) {
+            return base.Channel.GetTT(keyword);
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataTable> GetTTAsync(string keyword) {
+            return base.Channel.GetTTAsync(keyword);
         }
     }
 }

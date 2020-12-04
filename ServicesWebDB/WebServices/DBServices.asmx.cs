@@ -3,6 +3,7 @@ using ServicesWebDB.models;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.Entity;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
@@ -18,6 +19,11 @@ namespace ServicesWebDB
     [System.ComponentModel.ToolboxItem(false)]
     // To allow this Web Service to be called from script, using ASP.NET AJAX, uncomment the following line. 
     // [System.Web.Script.Services.ScriptService]
+    static class Connection
+    {
+        static string ConnectionString = @"Data Source=DESKTOP-3QME7JC;Initial Catalog=Sports_News;Integrated Security=True;MultipleActiveResultSets=True;Application Name=EntityFramework";
+        public static SqlConnection conn = new SqlConnection(ConnectionString);
+    }
     public class DBServices : System.Web.Services.WebService
     {
         private SportModel db = new SportModel();
@@ -26,7 +32,7 @@ namespace ServicesWebDB
         {
             return "Hello World";
         }
-
+        //Login
         [WebMethod]
         public int CheckLogin(string email, string pass)
         {
@@ -75,6 +81,36 @@ namespace ServicesWebDB
             thanhVien.Rows.Add(tv.id,tv.Email,tv.Password,tv.Ho,tv.Ten,tv.NgayDK);
             ds.Tables.Add(thanhVien);
             return ds;
+        }
+        //Search
+        [WebMethod]
+        public int Search(string keyword)
+        {
+            var result = db.TinTucs.Where(x => x.TieuDe.Contains(keyword) || x.TacGia.Contains(keyword)).ToList();
+            if (result.Count > 0)
+            {
+                return 1;
+            }
+            else
+            {
+                return 0;
+            }
+        }
+        [WebMethod]
+        public DataTable GetTT(string keyword)
+        {
+            DataTable result = new DataTable("GetTT");
+            // Lấy dữ liệu
+            string strCommand = @"Select tt.id,tt.idCM,tt.id_User,tt.TieuDe,tt.MoTa,
+                                                    tt.NoiDung,tt.TacGia,tt.Thumbnails,tt.NgayDang,tt.Numread
+                                  from TinTuc as tt
+                                  where tt.TieuDe like N'%"+keyword+"%'";
+            SqlCommand command = new SqlCommand(strCommand, Connection.conn);
+            SqlDataAdapter Adapter = new SqlDataAdapter(command);
+            Adapter.Fill(result);
+            Adapter.Dispose();
+            //Kết thúc lấy dữ liệu
+            return result;
         }
     }
 }

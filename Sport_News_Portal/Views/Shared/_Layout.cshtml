@@ -22,12 +22,15 @@
                 <a href="/Home/Index" class="link-homepage">
                     <img class="logo" src="\Content\assets\img\Logo.jpg" alt="">
                 </a>
-                <div class="header__search bm-search">
-                    <input type="text" class="text-search" placeholder="Nhập nội dung tìm kiếm">
-                    <button class="search-button">
-                        <i class="search-button--icon fal fa-search"></i>
-                    </button>
-                </div>
+                @using (Html.BeginForm("Index", "Home", FormMethod.Get))
+                {
+                    <div class="header__search bm-search">
+                        <input type="text" name="search" class="text-search" placeholder="Nhập nội dung tìm kiếm">
+                        <button type="submit" class="search-button">
+                            <i class="search-button--icon fal fa-search"></i>
+                        </button>
+                    </div>
+                }
                 <div class="header__user">
                     @if (Session["ThanhVien"] == null)
                     {
@@ -88,7 +91,7 @@
                                     <a href="/Category/BDTBN" class="sub-menu ">BÓNG ĐÁ TÂY BAN NHA</a>
                                 </li>
                                 <li class="">
-                                    <a href="/Category/DBItalia" class="sub-menu ">BÓNG ĐÁ Ý</a>
+                                    <a href="/Category/BDItalia" class="sub-menu ">BÓNG ĐÁ Ý</a>
                                 </li>
                             </ul>
                         </li>

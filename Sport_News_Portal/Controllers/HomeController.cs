@@ -14,8 +14,9 @@ namespace Sport_News_Portal.Controllers
         private SportsModel db = new SportsModel();
         public ActionResult Index()
         {
+            var model = db.TinTucs.ToList();
             ViewBag.RSS = RssReader.GetRssFeed("https://bongda24h.vn/RSS/279.rss");
-            return View();
+            return View(model);
         }
         [HttpGet]
         public ActionResult Details(int id)
@@ -27,6 +28,27 @@ namespace Sport_News_Portal.Controllers
                 id_TT = Tintuc.id
             };
             return View("Details", bl);
+        }
+        //Search
+        [HttpGet]
+        public ActionResult Index(string search)
+        {
+            ViewBag.RSS = RssReader.GetRssFeed("https://bongda24h.vn/RSS/279.rss");
+            DBServices.DBServicesSoapClient client = new DBServices.DBServicesSoapClient();
+            int s = client.Search(search);
+            if (s == 1) 
+            {
+                var result = ConvertToOBJ.Convert2(client.GetTT(search));
+                return View("SearchResult", result);
+            }
+            else
+            {
+                return View(db.TinTucs.ToList());
+            }
+        }
+        public ActionResult SearchResult()
+        {
+            return View();
         }
         //Login
         public ActionResult Login()
@@ -40,7 +62,7 @@ namespace Sport_News_Portal.Controllers
             int result = client.CheckLogin(email, pass);
             if (result == 1)
             {
-                ThanhVien tv = ConvertToOBJ.Convert(client.GetAccount(email));
+                ThanhVien tv = ConvertToOBJ.Convert1(client.GetAccount(email));
                 Session.Add("ThanhVien", tv);
                 return RedirectToAction("Index", "Home");
             }

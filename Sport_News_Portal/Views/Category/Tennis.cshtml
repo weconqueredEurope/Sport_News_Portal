@@ -1,7 +1,8 @@
-﻿
+﻿@using Sport_News_Portal.Models;
 @{
     ViewBag.Title = "Tennis";
 }
+@model IEnumerable<TinTuc>
 
 <div class="breadcrumb">
     <a class="cate" href="">quần vợt</a>
@@ -63,6 +64,24 @@
     </div>
 </div>
 <div class="timeline loadmore" data-track="|timeline">
+    @foreach (TinTuc item in Model)
+    {
+        <div class="story" data-track="|index0">
+            <div class="story__thumb">
+                <a href="/Home/Details/@item.id" target="_blank">
+                    <img src="@item.Thumbnails" alt="@item.TieuDe">
+                </a>
+            </div>
+            <h4 class="story__heading">
+                <a href="/Home/Details/@item.id" title="@item.TieuDe" target="_blank">@item.TieuDe</a>
+            </h4>
+            <div class="story__meta">
+                <a class="source" href="/Home/Details/@item.id">@item.TacGia</a>
+                <time class="time friendly" datetime="@item.NgayDang">@item.NgayDang</time>
+                <a class="relate" href="">1143 liên quan</a>
+            </div>
+        </div>
+    }
     @foreach (var item in ViewBag.RSS)
     {
         if (counter < 20)

@@ -1828,6 +1828,7 @@
     <Content Include="Content\assets\fonts\fontawesome-free-5.12.1\webfonts\fa-solid-900.woff2" />
     <None Include="Connected Services\DBServices\DBServices.wsdl" />
     <Content Include="Properties\DataSources\System.Data.DataSet.datasource" />
+    <Content Include="Properties\DataSources\System.Data.DataTable.datasource" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -1863,6 +1864,7 @@
     <Content Include="Views\Category\DuaXe.cshtml" />
     <Content Include="Views\Category\CauLong.cshtml" />
     <Content Include="Views\Home\Details.cshtml" />
+    <Content Include="Views\Home\SearchResult.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
